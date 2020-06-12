@@ -1,0 +1,54 @@
+<div id="content">
+    <div class="container-fluid">
+        <div class="d-flex flex-column">
+
+            <div class="card">
+                <div class="card-header">
+                    Tambah Data
+                </div>
+                <div class="card-body ">
+                    <div class="row">
+                        <div class="col-md-6  ">
+                            <form action="" method="post">
+                                <input type="hidden" value="<?= $user['id']?>"name="id">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nama </label>
+                                    <input type="text" name="nama" class="form-control" value="<?=$user['nama']?>" placeholder="Nama Lengkap">
+                                    <small  class="form-text text-danger mb-1"> <?= form_error('nama')?> </small>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Username</label>
+                                    <input type="text" name="username" value="<?=$user['username']?>" class="form-control" id="exampleInputPassword1" placeholder="Username ">
+                                    <small  class="form-text text-danger mb-1"> <?= form_error('username')?> </small>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="text" name="password" value="<?=$user['password']?>" class="form-control" id="exampleInputPassword1" placeholder="Password" maxlength="8">
+                                    <small  class="form-text text-danger mb-1"> <?= form_error('password')?> </small>
+
+                                </div>
+
+
+                                <div>
+                                    <button class="btn btn-primary float-right" type="submit"> Submit </button>
+                                </div>
+                                
+
+
+                        </div>
+
+                     
+                    </div>
+
+                    </form>
+
+
+
+
+                </div>
+            </div>
+        </div>
+
