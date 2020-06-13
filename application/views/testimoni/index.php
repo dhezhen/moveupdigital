@@ -33,7 +33,6 @@
           <?php $start=1;?>
          
             <tr>
-                
              
             </th>
               <td><?= $start; ?></td>
@@ -42,12 +41,12 @@
               <td><?= $t["isi_testimoni"]; ?></td>
               <td><?= $t["bintang"]; ?></td>
              
-              <td> <img class="img-profile rounded-circle" src="<?=base_url()?>assets/img/testimoni/<?=$t['foto'];?>"> </td>
+              <td> <img class=" testimoni rounded-circle img-thumbnail" src="<?=base_url()?>assets/upload/testimoni/thumbnail/<?=$t['foto']?>"> </td>
               <td>
                 <!-- <a href="<?= $t["id"]; ?>"><button type="button" data-toggle="modal" data-target="#detail" class="btn btn-primary"><i class="fas fa-info"></i></button></a>
             <a href="<?= $t["id"]; ?>"><button type="button" data-toggle="modal" data-target="#edit" class="btn btn-warning"><i class="fas fa-edit"></i></button></a> -->
 
-                <a class="btn btn-danger float-right mr-2 tombol-hapus" href="<?= base_url(); ?>testimoni/hapus/<?= $t['id']; ?>">
+                <a class="btn btn-danger float-right mr-2 tombol-hapus" onclick="confirm('Apakah data ini akan dihapus ?')" href="<?= base_url(); ?>testimoni/hapus/<?= $t['id']; ?>">
                   <i class="fas fa-trash fa"></i>
                 </a>
 

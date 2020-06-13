@@ -660,7 +660,7 @@
                                 <div class="testimonial-author d-sm-flex justify-content-between">
                                     <div class="author-info d-flex align-items-center">
                                         <div class="author-image">
-                                            <img src="<?=base_url()?>assets_web/images/author-1.jpg" alt="author">
+                                            <img src="<?=base_url()?>assets/upload/testimoni/thumbnail/<?=$t['foto']?>" alt="<?=$t['nama']?>">
                                         </div>
                                         <div class="author-name media-body">
                                             <h5 class="name"> <?=$t['nama']?></h5>

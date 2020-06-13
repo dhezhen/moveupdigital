@@ -9,7 +9,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-8 border">
-                            <form action="<?=  base_url()?>testimoni/tambah" enctype=multipart/form-data method="post">
+                            <form action="<?=  base_url()?>testimoni/insertdata" enctype=multipart/form-data method="post">
+                        
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Nama Lengkap</label>
                                     <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap">

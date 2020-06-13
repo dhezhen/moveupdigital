@@ -11,6 +11,7 @@ class Testimoni_model extends CI_model{
     {
        
         $this->db->insert('testimoni', $data);
+        return true;
     }
    
 
