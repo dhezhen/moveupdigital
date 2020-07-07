@@ -2932,7 +2932,8 @@ p {
     padding-top: 50px; }
     .single-testimonial .testimonial-author .author-info .author-image img {
       border-radius: 50%;
-      width: 70px; }
+      width: 75px;
+    height: 75px; }
     .single-testimonial .testimonial-author .author-info .author-name {
       padding-left: 30px; }
       .single-testimonial .testimonial-author .author-info .author-name .name {
@@ -2992,8 +2993,10 @@ p {
   -webkit-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   -moz-box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1);
   box-shadow: 0px 8px 16px 0px rgba(72, 127, 255, 0.1); }
+
   .team-style-eleven .team-image img {
     width: 100%; }
+    
   .team-style-eleven .team-content {
     position: absolute;
     bottom: 0;

@@ -17,7 +17,7 @@
             <th scope="col">Nama</th>
             <th scope="col">Username</th>
             <th scope="col">Password</th>
-            <th scope="col">Foto</th>
+            <!-- <th scope="col">Foto</th> -->
              <th scope="col">Aksi</th>
           </tr>
         </thead>
@@ -41,12 +41,12 @@
               <td><?= $u["password"]; ?></td>
          
              
-              <td> <img class="img-profile rounded-circle" src="<?=base_url()?>assets/img/<?=$u['foto'];?>"> </td>
-              <td>
+              <!-- <td> <img class="img-profile rounded-circle" src="< ?=base_url()?>assets/img/< ?=$u['foto'];?>"> </td>
+              <td> -->
                 <!-- <a href="<?= $u["id"]; ?>"><button type="button" data-toggle="modal" data-target="#detail" class="btn btn-primary"><i class="fas fa-info"></i></button></a>
             <a href="<?= $u["id"]; ?>"><button type="button" data-toggle="modal" data-target="#edit" class="btn btn-warning"><i class="fas fa-edit"></i></button></a> -->
-
-                <a class="btn btn-danger float-right mr-2 tombol-hapus" href="<?= base_url(); ?>login/hapus/<?= $u['id']; ?>">
+<td>
+                <a class="btn btn-danger float-right mr-2 tombol-hapus" onclick="return('Apakah Adata ini akan dihapus');"href="<?= base_url(); ?>login/hapus/<?= $u['id']; ?>">
                   <i class="fas fa-trash fa"></i>
                 </a>
 

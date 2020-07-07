@@ -6,6 +6,9 @@ class Home extends CI_Controller{
         parent:: __construct();
         $this->load->model('Pesan_model');
         $this->load->model('Testimoni_model');
+        $this->load->model('Pertanyaan_model');
+        $this->load->model('Tim_model');
+        $this->load->model('Portpolio_model');
         $this->load->library('form_validation');
       
     }
@@ -18,7 +21,10 @@ class Home extends CI_Controller{
         $this->form_validation->set_rules('email','Email','required|valid_email|trim');
 
         if ($this->form_validation->run() == false ) {
+          
+            $data['tim']= $this->Tim_model->getAllTim();
             $data['testimoni']= $this->Testimoni_model->getAllTestimoni();
+            $data['pertanyaan']= $this->Pertanyaan_model->getAllPertanyaan();
             $this->load->view('home/index',$data);                 
                 
             } 
@@ -41,12 +47,25 @@ class Home extends CI_Controller{
     public function index(){
         $data['judul'] = "Home";
         $data['testimoni']= $this->Testimoni_model->getAllTestimoni();
+        $data['pertanyaan']= $this->Pertanyaan_model->getAllPertanyaan();
+        $data['tim']= $this->Tim_model->getAllTim();
+        $data['portpolio']= $this->Portpolio_model->getAllPortpolio();
         $this->load->view('home/index',$data);
+            }
+
+
+
+
+        public function detail_portpolio(){
+            $data['judul'] = "Portpolio Lengkap";
+            $data['portpolio']= $this->Portpolio_model->getAllPortpolio();
+            $data['kategori']= $this->Portpolio_model->getKategori();
+            $this->load->view('home/detail_portpolio',$data);
+
+
+        }
+
+
+
         
-
-
-    }
-
 }
-
-?>

@@ -7,9 +7,12 @@
   <!-- Begin Page Content -->
   <div class="container-fluid">
     <div>
-      <h5 class="text-center mt-3 mb-3"><?= $judul; ?></h5>
+      <h5 class="text-center mt-3 mb-3"><?= $judul; ?> </h5>
+    
     </div>
+    <?=$total_pesan?>
     <table id="table" class="table table-hover table-striped">
+
       <thead class="thead-dark">
         <tr>
           <th scope="col">No</th>
@@ -24,10 +27,10 @@
 
 
 
+      <?php $start = 1; ?>
         <?php
 
         foreach ($pesan as $p) :   ?>
-          <?php $start = 1; ?>
 
           <tr>
 
@@ -41,7 +44,7 @@
 
 
             <td>
-              <a class="btn btn-danger float-right mr-2 tombol-hapus" href="<?= base_url(); ?>pesan/hapus/<?= $p['id']; ?>">
+              <a class="btn btn-danger float-right mr-2 tombol-hapus" onclick="return confirm('apakah data akan dihapus?');"  href="<?= base_url(); ?>pesan/hapus/<?= $p['id']; ?>">
                 <i class="fas fa-trash fa"></i>
               </a>
 

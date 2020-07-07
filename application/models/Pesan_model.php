@@ -7,6 +7,12 @@ class Pesan_model extends CI_Model{
         return $this->db->get('pesan')->result_array();
     }
 
+    public function total_inbox()
+    {
+       $this->db->select('pesan');
+      $this->db->count_all_results();
+    }
+
     public function   tambahDataPesan(){
         $data = array(
             'nama'          => $this->input->post('nama'),

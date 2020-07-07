@@ -10,6 +10,7 @@
   <meta name="author" content="">
 
   <title><?= $judul;?></title>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="<?php echo base_url();?>assets/js/sweetalert2.all.min.js"  crossorigin="anonymous"></script>
   <script src="<?php echo base_url();?>assets/js/myscript.js"></script>
   <!-- Custom fonts for this template-->
@@ -19,9 +20,19 @@
 
   <!-- Custom styles for this template-->
   <link href="<?=base_url()?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-  <link href="<?= base_url()?>datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  <link href="<?= base_url()?>assets/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   <link rel="stylesheet" href="<?=base_url()?>assets_web/css/LineIcons.css">
-
+  <link rel="stylesheet" href="<?=base_url()?>assets_web/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="<?=base_url()?>assets_web/css/style.css">
+    <link rel="stylesheet" href="<?=base_url()?>assets_web/css/bootstrap.min.css">
+    
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="<?=base_url()?>assets_web/css/default.css">
+    
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="<?=base_url()?>assets_web/css/style.css">
 </head>
 
 <body id="page-top">

@@ -14,10 +14,12 @@ class Testimoni_model extends CI_model{
         return true;
     }
    
-
-    public function hapusDataTestimoni($id){
+    public function hapusDataTestimoni($where){
         //$this->db->where('id', $id);
-        $this->db->delete('testimoni',['id'=>$id]);
+        // $this->db->delete('testimoni',['id'=>$id]);
+        $this->db->where($where);
+        $this->db->delete('testimoni');
+        return TRUE;
         
     }
 

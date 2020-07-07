@@ -8,6 +8,18 @@
 <div class="container-fluid">
     <div>
         <h5 class="text-center mt-3 mb-3"><?=$judul;?></h5>
+       <?php if($this->session->flashdata()):?>
+        <div class="row mt-3 text-center">
+            <div class="col md-6">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong> Data berhasil <?= $this->session->flashdata('flash'); ?></strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+<?php endif;?>
     </div>
     <a class="btn btn-primary m-3" href="<?= base_url()?>testimoni/tambah"> <i class="fas fa-"></i> Tambah</a>
     <table id="table" class="table table-hover table-striped" >
@@ -46,7 +58,7 @@
                 <!-- <a href="<?= $t["id"]; ?>"><button type="button" data-toggle="modal" data-target="#detail" class="btn btn-primary"><i class="fas fa-info"></i></button></a>
             <a href="<?= $t["id"]; ?>"><button type="button" data-toggle="modal" data-target="#edit" class="btn btn-warning"><i class="fas fa-edit"></i></button></a> -->
 
-                <a class="btn btn-danger float-right mr-2 tombol-hapus" onclick="confirm('Apakah data ini akan dihapus ?')" href="<?= base_url(); ?>testimoni/hapus/<?= $t['id']; ?>">
+                <a class="btn btn-danger float-right mr-2 tombol-hapus" onclick="return confirm('Apakah data ini akan dihapus ?')" href="<?= base_url(); ?>testimoni/hapus/<?= $t['id'].'/'.$t['foto']?>">
                   <i class="fas fa-trash fa"></i>
                 </a>
 

@@ -14,8 +14,9 @@ class Pesan extends CI_controller{
 public function index(){
     $data['judul'] = "Inbox Message";
     $data['pesan'] = $this->Pesan_model->getAllDataPesan();
+    $data['total_pesan'] = $this->Pesan_model->total_inbox();
     $this->load->view('admin/templates/header',$data);
-    $this->load->view('admin/templates/sidebar');
+    $this->load->view('admin/templates/sidebar',$data);
     $this->load->view('pesan/index',$data);
     $this->load->view('admin/templates/footer');
 }

@@ -23,8 +23,8 @@
                                     <label for="exampleFormControlSelect1">Rating</label>
                                     <select class="form-control" name="bintang">
 
-                                    <option > <?=$testimoni['bintang'];?> </option>
-<i class="lni lni-star-filled"></i>
+                                    <option><?=$testimoni['bintang'];?> </option>
+                                       
                                         <option value='<i class="lni lni-star-filled"></i>'> Bintang 1</option>
                                         <option value='<i class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i>'> Bintang 2</option>
                                         <option value='<i class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i><i class="lni lni-star-filled"></i>'> Bintang 3</option>
@@ -40,6 +40,13 @@
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Testimoni</label>
                                 <textarea class="form-control" name="isi_testimoni" rows="6"> <?=$testimoni['isi_testimoni']?></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 ">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Foto</label>
+                               <input  class="form-control"  type="file" value="<?=$testimoni['foto']?>">
                                 <input type="submit" value="submit" name="submit" class="btn btn-primary mt-2 float-right">
                             </div>
                         </div>

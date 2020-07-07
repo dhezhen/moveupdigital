@@ -4,7 +4,6 @@ class Testimoni extends CI_Controller {
 
     public function __construct(){
         parent:: __construct();
-        $this->load->database();
         $this->load->model('Testimoni_model');
         $this->load->library('form_validation');
         $this->load->library('upload');
@@ -12,7 +11,6 @@ class Testimoni extends CI_Controller {
 
     public function index() {
         $data['judul'] = "Testimoni";
-
         $data['testimoni']= $this->Testimoni_model->getAllTestimoni();
         
         $this->load->view('admin/templates/header',$data);
@@ -63,8 +61,10 @@ class Testimoni extends CI_Controller {
 	                          'bintang'         => $bintang,
                               'foto'            => $foto_['file_name']
 	                        );
-							$this->Testimoni_model->tambahDataTestimoni($data);
-              redirect('testimoni');
+                            $this->Testimoni_model->tambahDataTestimoni($data);
+                            $this->session->set_flashdata('flash','ditambahkan');
+                            redirect('testimoni');
+
 	        }else {
                 $error = $this->upload->display_errors();
               die($error);
@@ -87,10 +87,10 @@ class Testimoni extends CI_Controller {
       
 
         if ( $this->form_validation->run() == false ) {             
-                                    $this->load->view('admin/templates/header',$data);
-                                    $this->load->view('admin/templates/sidebar');
-                                    $this->load->view('testimoni/tambah');
-                                    $this->load->view('admin/templates/footer');                       
+            $this->load->view('admin/templates/header',$data);
+            $this->load->view('admin/templates/sidebar');
+            $this->load->view('testimoni/tambah');
+            $this->load->view('admin/templates/footer');                       
         }                   
                                               }   
 
@@ -98,8 +98,12 @@ class Testimoni extends CI_Controller {
 
    
 
-public function hapus($id){
-    $this->Testimoni_model->hapusDataTestimoni($id);;
+public function hapus($id,$foto){
+
+    $path = './assets/upload/testimoni/';
+    @unlink($path.$foto);
+    $where = array('id' => $id );
+    $this->Testimoni_model->hapusDataTestimoni($where);
     $this->session->set_flashdata('flash','Dihapus');
     redirect('testimoni');
 

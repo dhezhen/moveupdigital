@@ -32,7 +32,7 @@
         <div class="modal-body">Logout to end session</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?=base_url()?>admin/logout">Logout</a>
+          <a class="btn btn-primary" href="<?=base_url()?>login/logout">Logout</a>
         </div>
       </div>
     </div>
@@ -40,6 +40,7 @@
 
   
   <!-- Bootstrap core JavaScript-->
+
   <script src="<?=base_url()?>assets/jquery/jquery.min.js"></script>
   <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -55,6 +56,9 @@
   <!-- Page level custom scripts -->
   <script src="<?=base_url()?>assets/js/demo/chart-area-demo.js"></script>
   <script src="<?=base_url()?>assets/js/demo/chart-pie-demo.js"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
 

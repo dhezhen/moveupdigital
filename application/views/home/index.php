@@ -543,6 +543,11 @@
 
     <!--====== PRINICNG ENDS ======-->
     
+
+
+
+
+
     <!--====== ABOUT PART START ======-->
 
     <section id="about" class="about-area">
@@ -556,61 +561,29 @@
                         </div> <!-- faq title -->
                         <div class="about-accordion">
                             <div class="accordion" id="accordionExample">
-                                <div class="card">
-                                    <div class="card-header" id="headingOne">
-                                        <a href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Pertanyaaan  One</a>
+                <?php foreach ($pertanyaan as $pt):?>    
+                            <div class="card">
+                                    <div class="card-header" >
+                                        <a href="" class="collapsed" data-toggle="collapse" data-target="#a<?=$pt['id']?>" aria-expanded="false" aria-controls="collapseTwo"><?=$pt['jenis_pertanyaan']?></a>
                                     </div>
+                                    <div id="a<?=$pt['id']?>" class="collapse"  data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <p class="text">
+                                            <?=$pt['jawaban']?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div> 
-                                </div> <!-- card -->
-                                <div class="card">
-                                    <div class="card-header" id="headingTwo">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Pertanyaaan  Two</a>
-                                    </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- card -->
-                                <div class="card">
-                                    <div class="card-header" id="headingThree">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Pertanyaaan  Three</a>
-                                    </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- card -->
-                                <div class="card">
-                                    <div class="card-header" id="headingFore">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFore" aria-expanded="false" aria-controls="collapseFore">Pertanyaaan  Four</a>
-                                    </div>
-                                    <div id="collapseFore" class="collapse" aria-labelledby="headingFore" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- card -->
-                                <div class="card">
-                                    <div class="card-header" id="headingFive">
-                                        <a href="#" class="collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Pertanyaaan  Five</a>
-                                    </div>
-                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                                        <div class="card-body">
-                                            <p class="text">Morbi vehicula arcu et pellentesque tincidunt. Nunc ligula nulla, lobortis a elementum non, vulputate ut arcu. Aliquam erat volutpat. Nullam lacinia felis.</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- card -->
+                <?php endforeach;?>
+               
+                           <!-- card -->
+                             <!-- card -->
                             </div>
                         </div> <!-- faq accordion -->
                     </div> <!-- faq content -->
                 </div>
+                
                 <div class="col-lg-7">
                     <div class="about-image mt-50">
                         <img src="<?=base_url()?>assets_web/images/about.jpg" alt="about">
@@ -619,6 +592,12 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
+
+
+
+
+
+
 
     <!--====== ABOUT PART ENDS ======-->
     
@@ -641,7 +620,7 @@
                     </div> <!-- testimonial left content -->
                 </div>
                 <div class="col-lg-6">
-                    <div class="testimonial-right-content mt-50">
+                    <div class="testimonial-right -content mt-50">
                         <div class="quota">
                             <i class="lni lni-quotation"></i>
                         </div>
@@ -702,26 +681,29 @@
                 </div>
             </div> <!-- row -->
             <div class="row">
-                <div class="col-lg-4 col-sm-6">
+                <?php foreach($tim as $tim):?>
+                 <div class="col-lg-4 col-sm-6">
                     <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="team-image">
-                            <img src="<?=base_url()?>assets_web/images/team-1.jpg" alt="Team">
+                            <img  src="<?=base_url();?>assets/upload/tim/<?=$tim['foto']?>" alt="Team">
                         </div>
                         <div class="team-content">
                             <div class="team-social">
                                 <ul class="social">
-                                    <li><a href="#"><i class="lni lni-facebook-filled"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-twitter-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li>
-                                    <li><a href="#"><i class="lni lni-instagram"></i></a></li>
+                                    <li><a target="_blank" href="<?=$tim['fb']?>"><i class="lni lni-facebook-filled"></i></a></li>
+                                    <li><a target="_blank" href="<?=$tim['twitter']?>"><i class="lni lni-twitter-original"></i></a></li>
+                                    <li><a target="_blank" href="<?=$tim['ig']?>"><i class="lni lni-instagram"></i></a></li>
+                                    <li><a target="_blank" href="<?='https://api.whatsapp.com/send?phone='.$tim['no_hp']?>"><i class="lni lni-whatsapp"></i></i></a></li>
+                                    <!-- <li><a href="#"><i class="lni lni-linkedin-original"></i></a></li> -->
                                 </ul>
                             </div>
-                            <h4 class="team-name"><a href="#">Jeffery Riley</a></h4>
-                            <span class="sub-title">Art Director</span>
+                            <h4 class="team-name"><a href="#"><?=$tim['nama']?></a></h4>
+                            <span class="sub-title"><?=$tim['posisi']?></span>
                         </div>
                     </div> <!-- single team -->
                 </div>
-                <div class="col-lg-4 col-sm-6">
+<?php endforeach;?>
+                <!-- <div class="col-lg-4 col-sm-6">
                     <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="team-image">
                             <img src="<?=base_url()?>assets_web/images/team-2.jpg" alt="Team">
@@ -738,8 +720,9 @@
                             <h4 class="team-name"><a href="#">Riley Beata</a></h4>
                             <span class="sub-title">Web Developer</span>
                         </div>
-                    </div> <!-- single team -->
+                    </div> 
                 </div>
+<!-- 
                 <div class="col-lg-4 col-sm-6">
                     <div class="team-style-eleven text-center mt-30 wow fadeIn" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="team-image">
@@ -757,8 +740,10 @@
                             <h4 class="team-name"><a href="#">Mark A. Parker</a></h4>
                             <span class="sub-title">UX Designer</span>
                         </div>
-                    </div> <!-- single team -->
-                </div>
+                    </div> 
+                </div> -->
+                <!-- single team -->
+
             </div> <!-- row -->
         </div> <!-- container -->
     </section>
@@ -960,7 +945,7 @@
     <script src="<?=base_url()?>assets_web/js/jquery.magnific-popup.min.js"></script>
     
     <!--====== Ajax Contact js ======-->
-    <script src="<?=base_url()?>assets_web/js/ajax-contact.js"></script>
+    <!-- <script src="<?=base_url()?>assets_web/js/ajax-contact.js"></script> -->
     
     <!--====== Isotope js ======-->
     <script src="<?=base_url()?>assets_web/js/imagesloaded.pkgd.min.js"></script>
